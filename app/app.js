@@ -7,9 +7,15 @@
 
 const mongoose = require('mongoose');
 const db = require('./models/modelCompanies.js');  //Ruta creación de modelos
-const {afegirCompanyies, conncectDB} = require('./models/connectionDB.js')
 const express = require('express');
 const app = express();
+
+const Companyia = require('./models/modelCompanies.js');
+const afegirCompanyies = require('./models/connectionDB.js')
+
+afegirCompanyies();
+// conncectDB();
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,10 +25,6 @@ const routes = require('./routes/index_routes.js');
 const port = process.env.PORT || 3000;
 
 app.use('/', routes);
-// app.get ('/yo', (req, res)=> {
-
-// });
-
 
 
 app. listen(port, () => {

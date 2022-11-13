@@ -46,8 +46,5 @@ const quantitatEmpreses = async (req, res) => {
     }
 }
 
-// companyiesOrdenadesPerData
-// quantitatEmpreses
-
 
 module.exports = { companyiesOrdenadesPerTamany, companyiesOrdenadesPerData, quantitatEmpreses };

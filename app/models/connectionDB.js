@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const companyiesJSON = require('../utils/companies.json');
 const Companyia = require('../models/modelCompanies.js');
 
-const afegirCompanyies = async() => {
-    console.log(Companyia)
+// await mongoose.connect("mongodb://localhost:27017/companyia");
+
+const afegirCompanyies = async function afegirCompanyies() {
     try {
         companyiesJSON.forEach(async (companyia) => {
             await Companyia.create(companyia);
@@ -14,16 +15,16 @@ const afegirCompanyies = async() => {
     }
 };
 
-const conncectDB = async() => {
-    try {
-        await mongoose.connect("mongodb://localhost/companyies");
-        console.log("connected to database");
-    }catch(error){
-        throw error;
-    }
-}
+// const conncectDB = async() => {
+//     try {
+//         await mongoose.connect("mongodb://localhost:27017/companyia");
+//         console.log("connected to database");
+//     }catch(error){
+//         throw error;
+//     }
+// }
 
-module.exports = {afegirCompanyies, conncectDB}
+module.exports = afegirCompanyies
 // function afegirCompanyies() {
 //     const totalCompanyies = companyiesJSON.length
 //     console.log(totalCompanyies)

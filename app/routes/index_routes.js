@@ -8,18 +8,13 @@
 const express = require('express');
 const app = express();
 const routes = express.Router();
-const {afegirCompanyies, conncectDB} = require('./models/connectionDB.js')
+const afegirCompanyies = require('../models/connectionDB.js')
 
 
 const {companyiesOrdenadesPerTamany, companyiesOrdenadesPerData, quantitatEmpreses} = require('../controllers/companiesController.js');
 // const {companyiesOrdenadesPerTamany, companyiesOrdenadesPerData, quantitatEmpreses} = require('../controllers/companiesController.js');
 // const companyiesOrdenadesPerData = require('../controllers/companiesController.js');
 // const nombresEmpreses = require('../controllers/companiesController.js');
-
-
-app.get ('/yo', (req, res)=> {
-    console.log("jfsofeoff")
-});
 
 
 routes.get('/tamany', companyiesOrdenadesPerTamany);
